@@ -21,7 +21,7 @@
     size-style
     {{ block_settings.style_class }}
     {{ block_settings.style_class }}--{{ block.id }}
-    button-with-arrow
+    btn-with-arrow
   "
   style="{% render 'size-style', settings: block_settings %}"
   {%- if block_settings.open_in_new_tab -%}
@@ -30,14 +30,10 @@
   {%- endif -%}
   {{ block.shopify_attributes }}
 >
-  <span class="button-content">
-    {{ block_settings.label }}
-    <span class="arrow-container">
-     <img src="//cdn.shopify.com/s/files/1/0766/8370/6598/files/Arrow_1.png?v=1756395937" alt="" class="arrow-default" loading="lazy">
-    <img src="//cdn.shopify.com/s/files/1/0766/8370/6598/files/Arrow_1.png?v=1756395937" alt="" class="arrow-hover" loading="lazy">
-
-    </span>
-  </span>
+  <span class="btn-label">{{ block_settings.label }}</span>
+  <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 3.354a.5.5 0 1 1 .708-.708l5.5 5.5a.498.498 0 0 1 0 .708l-5.5 5.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+  </svg>
 </a>
 
 {% stylesheet %}
@@ -50,47 +46,19 @@
       text-decoration-color: transparent;
     }
   }
-  
-  .button-with-arrow {
+
+  .btn-with-arrow {
     display: inline-flex;
     align-items: center;
-    position: relative;
+    gap: 0.5rem; /* space between label & arrow */
+    text-decoration: none;
   }
-  
-  .button-content {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+
+  .btn-arrow {
+    transition: transform 0.2s ease;
   }
-  
-  .arrow-container {
-    display: inline-flex;
-    position: relative;
-    width: 20px;
-    height: 20px;
-  }
-  
-  .arrow-default,
-  .arrow-hover {
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.3s ease;
-  }
-  
-  .arrow-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-  }
-  
-  .button-with-arrow:hover .arrow-default {
-    opacity: 0;
-  }
-  
-  .button-with-arrow:hover .arrow-hover {
-    opacity: 1;
+
+  .btn-with-arrow:hover .btn-arrow {
+    transform: translateX(4px); /* smooth arrow slide on hover */
   }
 {% endstylesheet %}
-
-{% render 'button', link: block.settings.link %}
