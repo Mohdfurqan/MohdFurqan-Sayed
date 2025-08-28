@@ -114,6 +114,47 @@
         "padding-block-end": 0
       }
     },
+    "marquee_fCMN8T": {
+      "type": "marquee",
+      "blocks": {
+        "text_d8jbtH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "right",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "tight",
+            "case": "none",
+            "wrap": "nowrap",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_d8jbtH"
+      ],
+      "name": "t:names.marquee_section",
+      "settings": {
+        "movement_direction": "normal",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24,
+        "gap_between_elements": 24
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -311,6 +352,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "marquee_fCMN8T",
     "product_list_fa6P9H"
   ]
 }
