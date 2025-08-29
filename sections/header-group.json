@@ -64,6 +64,7 @@
           "static": true,
           "settings": {
             "menu": "main-menu",
+            "dynamic_header_text": "TISSO VISON - Find the ideal gift for your loved ones.",
             "menu_style": "text",
             "featured_products_aspect_ratio": "4 / 5",
             "featured_collections_aspect_ratio": "16 / 9",
@@ -84,6 +85,21 @@
             "drawer_accordion": false,
             "drawer_accordion_expand_first": false,
             "drawer_dividers": false
+          },
+          "blocks": {}
+        },
+        "button": {
+          "type": "button",
+          "static": true,
+          "settings": {
+            "label": "Contact Us",
+            "link": "shopify://collections",
+            "open_in_new_tab": true,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
           },
           "blocks": {}
         }
