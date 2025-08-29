@@ -63,9 +63,16 @@
   #  render 'header-actions'
   # endcapture
 
-  capture actions
-       content_for 'block', type: 'button', id: 'button'
-  endcapture
+  #capture actions
+   #    content_for 'block', type: 'button', id: 'button'
+  # endcapture
+
+  unless request.device_type == 'mobile'
+     capture actions 
+      content_for 'block', type: 'button', id: 'button'
+     endcapture 
+  endunless 
+
 
   if shop.customer_accounts_enabled
     assign search_class = 'mobile:hidden'
