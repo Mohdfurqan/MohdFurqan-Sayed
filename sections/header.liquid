@@ -47,13 +47,13 @@
 
   # Modified menu capture to show dynamic text on desktop
   capture menu
-    echo '<div class="desktop-dynamic-text desktop:block mobile:hidden">'
-    echo '<span class="dynamic-text-content">TISSO VISON - Find the ideal gift for your loved ones.</span>'
-    echo '</div>'
-    echo '<div class="mobile-menu desktop:hidden">'
-    content_for 'block', type: '_header-menu', id: 'header-menu'
-    echo '</div>'
-  endcapture
+  echo '<div class="desktop-dynamic-text desktop:block mobile:hidden">'
+  echo '<span class="dynamic-text-content">' | append: section.settings.dynamic_header_text | append: '</span>'
+  echo '</div>'
+  echo '<div class="mobile-menu desktop:hidden">'
+  content_for 'block', type: '_header-menu', id: 'header-menu'
+  echo '</div>'
+endcapture
 
   capture mobile_menu
     content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'mobile'
@@ -1000,6 +1000,17 @@
       "label": "t:settings.bottom_row",
       "default": "primary",
       "visible_if": "{{ section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
+    },
+    {
+      "type": "header",
+      "content": "Dynamic Header Text"
+    },
+    {
+      "type": "text",
+      "id": "dynamic_header_text",
+      "label": "Header Text",
+      "default": "TISSO VISON - Find the ideal gift for your loved ones.",
+      "info": "This text will replace the menu on desktop view"
     },
     {
       "type": "color_scheme",
